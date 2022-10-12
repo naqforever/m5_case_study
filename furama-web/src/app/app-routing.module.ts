@@ -4,13 +4,25 @@ import {UserContentLayoutComponent} from "./layout/user/user-content-layout/user
 import {AdminContentLayoutComponent} from "./layout/admin/admin-content-layout/admin-content-layout.component";
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: UserContentLayoutComponent,
+  // },
+  // {
+  //   path: 'admin',
+  //   component: AdminContentLayoutComponent
+  // }
   {
     path: '',
-    component: UserContentLayoutComponent,
+    loadChildren: () => import('./modules/user/user.module').then(module => module.UserModule)
   },
   {
     path: 'admin',
-    component: AdminContentLayoutComponent
+    loadChildren: () => import('./modules/admin/admin.module').then(module => module.AdminModule)
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./modules/abc/abc.module').then(module => module.AbcModule)
   }
 ];
 
