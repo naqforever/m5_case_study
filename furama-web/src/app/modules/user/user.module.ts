@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { ClientContentLayoutComponent } from './client-content-layout/client-content-layout.component';
 import {Routes} from "@angular/router";
 import {UserRoutingModule} from "./user-routing.module";
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
   {
@@ -13,7 +16,10 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ClientContentLayoutComponent
+    ClientContentLayoutComponent,
+    HomeComponent,
+    ContactComponent,
+    NewsComponent
   ],
   imports: [
     CommonModule,

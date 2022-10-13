@@ -14,7 +14,7 @@ const routes: Routes = [
   // }
   {
     path: '',
-    loadChildren: () => import('./modules/user/user.module').then(module => module.UserModule)
+    loadChildren: () => import('./modules/user/user.module').then(module => module.UserModule),
   },
   {
     path: 'admin',
@@ -27,7 +27,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation: 'reload'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

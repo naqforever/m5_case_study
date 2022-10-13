@@ -4,6 +4,7 @@ import { ManagerContentLayoutComponent } from './manager-content-layout/manager-
 import {Routes} from "@angular/router";
 import {AdminContentLayoutComponent} from "../../layout/admin/admin-content-layout/admin-content-layout.component";
 import {AdminRoutingModule} from "./admin-routing.module";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ManagerContentLayoutComponent
+    ManagerContentLayoutComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
