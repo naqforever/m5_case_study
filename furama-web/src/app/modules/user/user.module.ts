@@ -1,29 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientContentLayoutComponent } from './client-content-layout/client-content-layout.component';
-import {Routes} from "@angular/router";
 import {UserRoutingModule} from "./user-routing.module";
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { NewsComponent } from './news/news.component';
-
-const routes: Routes = [
-  {
-    path: 'list',
-    component: ClientContentLayoutComponent
-  }
-];
+import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {SharedModule} from "../../shared/shared.module";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
-    ClientContentLayoutComponent,
     HomeComponent,
     ContactComponent,
-    NewsComponent
+    NewsComponent,
+    LoginComponent
   ],
-  imports: [
-    CommonModule,
-    UserRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        UserRoutingModule,
+        ReactiveFormsModule,
+        SharedModule,
+        FontAwesomeModule
+    ]
 })
 export class UserModule { }

@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ManagerContentLayoutComponent} from "../admin/manager-content-layout/manager-content-layout.component";
-import {ClientContentLayoutComponent} from "./client-content-layout/client-content-layout.component";
-import {DashboardComponent} from "../admin/dashboard/dashboard.component";
 import {HomeComponent} from "./home/home.component";
 import {ContactComponent} from "./contact/contact.component";
 import {NewsComponent} from "./news/news.component";
+import {UserContentLayoutComponent} from "../../layout/user/user-content-layout/user-content-layout.component";
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: ClientContentLayoutComponent,
+    component: UserContentLayoutComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         component :HomeComponent,
-        runGuardsAndResolvers: 'always'
       },
       {
-        path: 'aaa',
-        redirectTo: '/home', pathMatch: 'full'
+        path: 'home',
+        redirectTo: '/', pathMatch: 'full'
+      },
+      {
+        path: 'login',
+        component: LoginComponent
       },
       {
         path: 'contact',
